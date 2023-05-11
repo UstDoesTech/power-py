@@ -4,8 +4,8 @@ with open("power-py-quickstart.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="hydr8",
-    version="0.0.2",
+    name="power-py",
+    version="0.0.1",
     author="Ust Oldfield",
     author_email="ust@ustdoes.tech",
     description="Power BI Python SDK",
