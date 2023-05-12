@@ -5,7 +5,7 @@ with open("power-py-quickstart.md", "r") as fh:
 
 setuptools.setup(
     name="power-py",
-    version="0.0.1",
+    version="0.0.1-1",
     author="Ust Oldfield",
     author_email="ust@ustdoes.tech",
     description="Power BI Python SDK",
