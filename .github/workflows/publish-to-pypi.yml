@@ -13,6 +13,14 @@ jobs:
               uses: actions/setup-python@v4
               with:
                 python-version: "3.x"
+            - name: Automatically update version
+              run: >- 
+                # from refs/tags/v1.2.3 get 1.2.3
+                VERSION=$(echo $GITHUB_REF | sed 's#.*/v##')
+                PLACEHOLDER='__version__ = "develop"'
+                VERSION_FILE='power_py/__init__.py'
+                sed -i "s/$PLACEHOLDER/__version__ = \"$VERSION\"/g" $VERSION_FILE
+              shell: bash
             - name: Install pypa/build
               run: >- 
                 python -m
