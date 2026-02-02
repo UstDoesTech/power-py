@@ -72,5 +72,3 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# pip artifacts
-=8.0.0

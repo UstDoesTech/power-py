@@ -701,7 +701,12 @@ def fabric_pipeline_run(workspace_id, pipeline_id, parameters):
     """Run a Fabric pipeline."""
     auth = get_auth()
     fab = Fabric(auth)
-    params = json.loads(parameters) if parameters else None
+    params = None
+    if parameters:
+        try:
+            params = json.loads(parameters)
+        except json.JSONDecodeError as e:
+            raise click.ClickException(f"Invalid JSON for parameters: {e}")
     result = fab.run_pipeline(workspace_id, pipeline_id, params)
     output_json(result)
 

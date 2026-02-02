@@ -1,0 +1,11 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting msal
+  Downloading msal-1.34.0-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: requests in /usr/lib/python3/dist-packages (2.31.0)
+Requirement already satisfied: click in /usr/lib/python3/dist-packages (8.1.6)
+Requirement already satisfied: PyJWT<3,>=1.0.0 in /usr/lib/python3/dist-packages (from PyJWT[crypto]<3,>=1.0.0->msal) (2.7.0)
+Requirement already satisfied: cryptography<49,>=2.5 in /usr/lib/python3/dist-packages (from msal) (41.0.7)
+Downloading msal-1.34.0-py3-none-any.whl (116 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 4.1 MB/s eta 0:00:00
+Installing collected packages: msal
+Successfully installed msal-1.34.0
