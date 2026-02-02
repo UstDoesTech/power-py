@@ -3,6 +3,7 @@ import setuptools
 with open("power-py-quickstart.md", "r") as fh:
     long_description = fh.read()
 
+
 def main():
     "Executes the setup function"
     import power_py as app
@@ -23,8 +24,14 @@ def main():
             "Operating System :: OS Independent",
         ],
         python_requires=">=3.6",
-        install_requires=["msal", "requests"],
+        install_requires=["msal", "requests", "click>=8.0.0"],
+        entry_points={
+            "console_scripts": [
+                "power-py=power_py.cli:main",
+            ],
+        },
     )
+
 
 if __name__ == "__main__":
     main()

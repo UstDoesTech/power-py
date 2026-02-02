@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: power-py
+Version: 0.1.0.dev0
+Summary: Power BI Python SDK
+Home-page: 
+Author: Ust Oldfield
+Author-email: power-py@ustdoes.tech
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Power BI Python Quickstart
+
+## Creating a wheel
+To deploy the wheel you will need to package the exiting code base as a Python wheel. To do this you will need a Python package called setuptools.
+
+```
+pip install setuptools
+```
+Once you have pip installed setuptools you can build the package and deploy.
+
+Open a cmd window and navigate to the folder which contains the "power-py".
+
+```
+cd "C:\Users\[user]\source\repos\power-py"
+```
+
+From here you will then need to build the package.
+
+```
+Python setup.py sdist bdist_wheel
+```

@@ -1,0 +1,2 @@
+[console_scripts]
+power-py = power_py.cli:main
