@@ -1,19 +1,22 @@
-import msal 
-import requests
+import msal
+
 
 class Auth:
+    """Authentication class for Power BI and Fabric API access."""
+
     def __init__(self, client_id, client_secret, authority):
         self.client_id = client_id
         self.client_secret = client_secret
         self.authority = authority
         self.scope = ["https://analysis.windows.net/powerbi/api/.default"]
         self.app = msal.ConfidentialClientApplication(
-            self.client_id, 
+            self.client_id,
             authority=self.authority,
             client_credential=self.client_secret
         )
 
     def get_token(self):
+        """Get an access token for Power BI API calls."""
         result = None
 
         # First, the code looks up a token from the cache
@@ -32,6 +35,10 @@ class Auth:
             print(result.get("correlation_id"))  # You may need this when reporting a bug
 
     def get_header(self):
+        """Get authorization header for API calls."""
         access_token = self.get_token()
-        header = {'Content-Type':'application/json', 'Authorization':f'Bearer {access_token}'}
+        header = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {access_token}'
+        }
         return header

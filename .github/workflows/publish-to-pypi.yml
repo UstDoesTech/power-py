@@ -17,7 +17,7 @@ jobs:
               run: >- 
                 # from refs/tags/v1.2.3 get 1.2.3
                 VERSION=$(echo $GITHUB_REF | sed 's#.*/v##')
-                PLACEHOLDER='__version__ = "develop"'
+                PLACEHOLDER='__version__ = "0.1.0.dev0"'
                 VERSION_FILE='power_py/__init__.py'
                 sed -i "s/$PLACEHOLDER/__version__ = \"$VERSION\"/g" $VERSION_FILE
               shell: bash
